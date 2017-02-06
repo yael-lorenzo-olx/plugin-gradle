@@ -55,6 +55,14 @@ $ athena gradle exec my-project/ runUnitTests
 
 $ # e.g. execute functional tests
 $ athena gradle exec my-project/ runAndroidUITests --athena-env=my-android.env --with-avd=192.168.99.101:5555
+
+$ # There is a special feature to improve performance on some systems.
+$ # By default athena will create a cache folder where it will run the tests.
+$ # WARNING: if some files, such as reports, are generated in some stage
+$ # they will NOT be available in the project folder when athena finishes.
+$ # In order to use the same project folder you should use this parameter
+$ #       --skip-sync
+$ athena gradle exec my-project/ runAndroidUITests --athena-env=my-android.env --with-avd=192.168.99.101:5555 --skip-sync
 ```
 ## Contributing
 
